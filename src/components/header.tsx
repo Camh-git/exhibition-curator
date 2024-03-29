@@ -1,5 +1,7 @@
 import logo from "../logo.svg";
 import { NavLink } from "react-router-dom";
+import "../styles/header.css";
+
 const navHeader: React.FC = () => (
   <header className="App-header">
     <img src={logo} alt="logo" className="App-logo" />
