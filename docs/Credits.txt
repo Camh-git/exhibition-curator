@@ -1,0 +1,5 @@
+The following are the credits for all 3rd party elements used in this application
+
+Icons:
+    The icons used in this project come from material IO (unless stated otherwise) and can be found at:
+    https://fonts.google.com/icons
