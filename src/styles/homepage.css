@@ -1,0 +1,27 @@
+.homepage_spacer {
+  height: 20vh;
+}
+.homepage_segment {
+  width: 100vw;
+  height: 50vh;
+  background-color: #282c34;
+  color: #61dafb;
+  padding-top: 2.5vh;
+  padding-bottom: 2.5vh;
+  /*
+  margin-left: 5vw;
+  border-radius: 50px;*/
+}
+.homepage_segment .collumn {
+  float: left;
+  width: 40vw;
+  padding: 1vw;
+}
+.homepage_segment p {
+  text-align: left;
+  padding-left: 5vw;
+}
+.homepage_segment img {
+  width: 20vw;
+  padding-left: 10vw;
+}
