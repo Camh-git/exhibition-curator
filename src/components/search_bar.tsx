@@ -1,10 +1,12 @@
 import search_icon from "../assets/images/icons/search_white_24dp.svg";
+import "../styles/search_bar.css";
+
 const SearchBar: React.FC = () => (
   <div className="Searchbar_body">
     <input
       type="text"
       id="search_text"
-      placeholder="Find a masterpiece"
+      placeholder="Find a masterpiece..."
     ></input>
     <button>Add tags</button>
     <button>
