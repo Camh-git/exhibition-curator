@@ -1,5 +1,8 @@
 The following are the credits for all 3rd party elements used in this application
 
+APIs:
+    The Victoria and albert museum API: https://developers.vam.ac.uk/guide/v2/welcome.html
+
 Images:
     Homepage art gallery image: https://commons.wikimedia.org/wiki/File:Aberdeen_Art_Gallery_-_geograph.org.uk_-_2544969.jpg
 

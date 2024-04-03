@@ -1,0 +1,8 @@
+Major:
+    consider using the VAMs built in search to look for search results, will hopefully only require an optional param
+    Add the fetches for the remaing APIS, determin if they can be used to perform the search directly rather than searching a cache
+    Decide if the above method is also a good way to get the data for "my exhibition" or if a cache would be more appropriate  
+Minor:
+    replace the "as any" in Convert_to_ArtObject.tsx with dedicated interfaces for each type of API object
+    Investigate more options for ArtObject data, find a way to integrate them neatly into the UI
+    add checks to stop duplicates caused by reacts double running

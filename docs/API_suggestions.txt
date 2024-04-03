@@ -1,0 +1,20 @@
+curently looking at:
+
+great list from the postman website:
+https://www.postman.com/opamcurators/workspace/open-access-museums/overview
+
+Met museum of art:
+responds in json and clearly lists endpoints, fairly simple requests
+all objects: https://collectionapi.metmuseum.org/public/collection/v1/objects
+specific object: https://collectionapi.metmuseum.org/public/collection/v1/objects/1
+can also go by departments: https://collectionapi.metmuseum.org/public/collection/v1/departments
+comes with built in search: https://collectionapi.metmuseum.org/public/collection/v1/search?q=sunflowers
+docs: https://metmuseum.github.io/
+
+the V&A:
+very large collection, also returns json
+docs: https://developers.vam.ac.uk/guide/v2/welcome.html
+
+museum of of modern art
+limited docs, requires token
+link: https://api.moma.org/
