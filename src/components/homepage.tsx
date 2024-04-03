@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import SearchBar from "./search_bar";
 import gallery_image from "../assets/images/Art gallery.jpg";
 import "../styles/homepage.css";

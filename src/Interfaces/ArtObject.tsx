@@ -4,4 +4,8 @@ export interface ArtObject {
   title: string;
   artist: string;
   date: string;
+  location: string;
+  collection: string; //The source API
+  images: string[];
+  onDisplay: boolean;
 }

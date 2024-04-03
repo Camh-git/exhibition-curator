@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     const VAMdata = async () => {
-      const data = await fetch_VAM_API();
+      setArtPieces(await fetch_VAM_API());
     };
     VAMdata();
   }, []);
@@ -21,5 +21,15 @@ function App() {
     </div>
   );
 }
-
+/*
+  <ul>
+        {artPieces.map((object) => (
+          <li key={object.id}>
+            <h2>{object.title}</h2>
+            <p>Artist: {object.artist}</p>
+            <p>Date: {object.date}</p>
+          </li>
+        ))}
+      </ul>
+*/
 export default App;
