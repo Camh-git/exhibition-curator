@@ -23,11 +23,19 @@ export function Convert_to_ArtObject(
         if (record._images._iiif_presentation_url !== undefined) {
           image_urls.push(record._images._iiif_presentation_url);
         }
+        let obj_title = "Unknown title";
+        if (
+          record._primaryTitle !== "" &&
+          record._primaryTitle !== undefined &&
+          record._primaryTitle !== null
+        ) {
+          obj_title = record._primaryTitle;
+        }
 
         //Create the new peice and append it to the list
         const newPiece: ArtObject = {
           id: "VAM" + record.systemNumber.toString(),
-          title: record._primaryTitle,
+          title: obj_title,
           artist: record._primaryMaker.name,
           date: record._primaryDate.toString(),
           location: record._currentLocation.displayName,

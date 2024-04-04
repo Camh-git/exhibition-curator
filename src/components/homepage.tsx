@@ -8,7 +8,8 @@ const Home: React.FC = () => {
       <div className="homepage_spacer" />
       <SearchBar />
       <div className="homepage_spacer" />
-      <div className="homepage_segment">
+
+      <section className="homepage_segment">
         <h2>What is exhibition curator?</h2>
         <div className="collumn">
           <p>
@@ -31,7 +32,7 @@ const Home: React.FC = () => {
         <div className="collumn">
           <img src={gallery_image} alt="Art gallery" />
         </div>
-      </div>
+      </section>
       <br />
       <br />
     </>
