@@ -6,6 +6,7 @@ Minor:
     replace the "as any" in Convert_to_ArtObject.tsx with dedicated interfaces for each type of API object
     Investigate more options for ArtObject data, find a way to integrate them neatly into the UI
     add checks to stop duplicates caused by reacts double running
+    maybe try and get different objects if they have unknown elements
 
 Notes:
     the number of results returned from the met museum is intentionally restricted to 10 to avoid getting rate limited (it can return thousands of results otherwise)

@@ -1,13 +1,12 @@
 import { ArtObject } from "../Interfaces/ArtObject";
 import { Convert_to_ArtObject } from "./Convert_to_ArtObject";
 
-export function fetch_MET_API(): Promise<ArtObject[]> {
+export function fetch_MET_API(search_term: string): Promise<ArtObject[]> {
   return new Promise<ArtObject[]>(async (resolve, reject) => {
+    const searchString = `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${search_term}`;
     try {
       //Get object IDs that match our search
-      const response = await fetch(
-        "https://collectionapi.metmuseum.org/public/collection/v1/search?q=england"
-      );
+      const response = await fetch(searchString);
       if (!response.ok) {
         throw new Error("API call response error");
       }

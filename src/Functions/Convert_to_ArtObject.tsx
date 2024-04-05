@@ -1,18 +1,6 @@
 import { ArtObject } from "../Interfaces/ArtObject";
 import not_found_icon from "../assets/images/Monitor-404.svg";
-
-function isNotBlank(record: any): boolean {
-  if (
-    record !== "" &&
-    record !== undefined &&
-    record !== null &&
-    record !== "Unknown"
-  ) {
-    return true;
-  } else {
-    return false;
-  }
-}
+import { isNotBlank } from "./IsNotBlank";
 
 export function Convert_to_ArtObject(
   data: string,

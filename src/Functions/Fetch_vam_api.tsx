@@ -1,12 +1,11 @@
 import { ArtObject } from "../Interfaces/ArtObject";
 import { Convert_to_ArtObject } from "./Convert_to_ArtObject";
 
-export function fetch_VAM_API(): Promise<ArtObject[]> {
+export function fetch_VAM_API(search_term: string): Promise<ArtObject[]> {
   return new Promise<ArtObject[]>(async (resolve, reject) => {
+    const searchString = `https://api.vam.ac.uk/v2/objects/search?q_place_name="${search_term}"`;
     try {
-      const response = await fetch(
-        'https://api.vam.ac.uk/v2/objects/search?q_place_name="london"'
-      );
+      const response = await fetch(searchString);
       if (!response.ok) {
         throw new Error("API call response error");
       }
