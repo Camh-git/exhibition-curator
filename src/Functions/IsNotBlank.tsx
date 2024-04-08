@@ -3,7 +3,11 @@ export function isNotBlank(record: any): boolean {
     record !== "" &&
     record !== undefined &&
     record !== null &&
-    record !== "Unknown"
+    record !== "Unknown" &&
+    record !== "None" &&
+    record !== "In storage" &&
+    record !== "In_storage" &&
+    record !== "Storage"
   ) {
     return true;
   } else {

@@ -6,7 +6,19 @@ Minor:
     replace the "as any" in Convert_to_ArtObject.tsx with dedicated interfaces for each type of API object
     Investigate more options for ArtObject data, find a way to integrate them neatly into the UI
     add checks to stop duplicates caused by reacts double running
-    maybe try and get different objects if they have unknown elements
+    maybe try and get different objects if the current one have unknown elements - shuffle unknows to the end of the search results, since they are less relevent
+
+    search btn's start search sets context(search params), navs to an empty results page -> results page loads, runs run_search(), runsearch is simple function
+        and returns array of art objects, results page sets them to state and then maps over them
+    
+    consider re-ordering search results to put results with unknown values lower down (if better options cant be found)
+     
 
 Notes:
     the number of results returned from the met museum is intentionally restricted to 10 to avoid getting rate limited (it can return thousands of results otherwise)
+
+
+
+REMINDERS:
+    USE context to store search results, the user can then simply be sent to the search results page and it can map the context
+        ^ probably use context to ensure the exhibition's contents are consistent throught the session

@@ -1,12 +1,25 @@
 import { ArtObject } from "../Interfaces/ArtObject";
+import React, { useState, useContext } from "react";
 import SearchResult from "./Search_result";
+import { curatorContext } from "../Interfaces/AppContext";
+import { search_APIs } from "../Functions/Run_search";
 import "../styles/search_result.css";
 
-interface ArtObjectListProp {
-  ArtObjects: ArtObject[];
-}
-const SearchResultsPage: React.FC<ArtObjectListProp> = ({ ArtObjects }) => {
+const SearchResultsPage: React.FC = () => {
+  const [ArtObjects, setArtObjects] = useState<ArtObject[]>([]);
   const isEmpty = ArtObjects.length > 0;
+
+  //Get the search parameters
+  const { lastSearchString, lastSearchParam, updateContext } =
+    useContext(curatorContext);
+  console.log(
+    `Searching for: ${lastSearchString}, paramaters: ${lastSearchParam}`
+  );
+  //Perform the search and populate the state
+  const new_data = React.useMemo(() => {
+    setArtObjects(search_APIs(lastSearchString, lastSearchParam));
+  }, []);
+
   return (
     <section>
       {isEmpty ? (

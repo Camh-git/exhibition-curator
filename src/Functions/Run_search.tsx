@@ -28,7 +28,7 @@ export const Run_search: React.FC<runSearchProps> = ({
     fetchData();
   });
 
-  return <SearchResultsPage ArtObjects={searchResults} />;
+  return <SearchResultsPage />;
 };
 
 export function search_APIs(
