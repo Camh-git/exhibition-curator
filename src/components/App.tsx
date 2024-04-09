@@ -12,16 +12,8 @@ import {
 function App() {
   document.title = "Exhibition curator";
   const [appContext, setAppContext] = useState(curatorContext);
-  const [artPieces, setArtPieces] = useState<ArtObject[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const VAMdata = async () => {
-      setArtPieces(await fetch_MET_API("england"));
-      setLoading(false);
-    };
-    VAMdata();
-  }, []);
   return (
     <div className="App">
       <CuratorContextProvider>
