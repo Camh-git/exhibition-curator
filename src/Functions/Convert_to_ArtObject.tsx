@@ -8,13 +8,14 @@ export function Convert_to_ArtObject(
 ): ArtObject[] {
   let objectList: ArtObject[] = [];
 
+  //Note: only accept peices that have at least a title OR an artist's name
   switch (sourceAPI) {
     case "VAM":
       for (const record of data as any) {
         //Get the piece's image URLs
         let image_urls: string[] = [];
         if (isNotBlank(record._images._primary_thumbnail)) {
-          image_urls.push(record._images._primary_thumbnail.toString());
+          image_urls.push(record._images._primary_thumbnail);
         } else {
           image_urls.push(not_found_icon);
         }
@@ -26,12 +27,15 @@ export function Convert_to_ArtObject(
         }
 
         //Generate placeholder values, use the real ones if available
+        let has_ID_info = false;
         let obj_title = "Unknown title";
         if (isNotBlank(record._primaryTitle)) {
+          has_ID_info = true;
           obj_title = record._primaryTitle;
         }
         let obj_artist = "Unknown artist";
         if (isNotBlank(record._primaryMaker.name)) {
+          has_ID_info = true;
           obj_artist = record._primaryMaker.name;
         }
 
@@ -46,7 +50,9 @@ export function Convert_to_ArtObject(
           images: image_urls,
           onDisplay: record._currentLocation.onDisplay,
         };
-        objectList.push(newPiece);
+        if (has_ID_info) {
+          objectList.push(newPiece);
+        }
       }
       break;
 
@@ -63,12 +69,15 @@ export function Convert_to_ArtObject(
           }
         }
         //Generate placeholder values, use the real ones if available
+        let has_ID_info = false;
         let obj_title = "Unknown title";
         if (isNotBlank(record.title)) {
+          has_ID_info = true;
           obj_title = record.title;
         }
         let obj_artist = "Unknown artist";
         if (isNotBlank(record.artistDisplayName)) {
+          has_ID_info = true;
           obj_artist = record.artistDisplayName;
         }
         const isDisplayed = isNotBlank(record.department);
@@ -83,7 +92,9 @@ export function Convert_to_ArtObject(
           images: image_urls,
           onDisplay: isDisplayed,
         };
-        objectList.push(newPiece);
+        if (has_ID_info) {
+          objectList.push(newPiece);
+        }
       }
       break;
 

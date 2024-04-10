@@ -1,9 +1,7 @@
 import "./App.css";
 import { Router } from "../router/router";
 import { BrowserRouter } from "react-router-dom";
-import React, { useState, useEffect, createContext, useContext } from "react";
-import { fetch_MET_API } from "../Functions/Fetch_met_api";
-import { ArtObject } from "../Interfaces/ArtObject";
+import React, { useState } from "react";
 import {
   curatorContext,
   CuratorContextProvider,
@@ -25,12 +23,3 @@ function App() {
   );
 }
 export default App;
-
-/*
-
- {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <SearchResultsPage ArtObjects={artPieces}></SearchResultsPage>
-      )}
-*/
