@@ -1,0 +1,50 @@
+.Exhibition_entry {
+  border: 5px grey solid;
+  border-radius: 50px;
+  width: 20vw;
+  padding: 1vw;
+  height: 30vh;
+  margin-top: 5vh;
+}
+.Exhibition_entry:hover {
+  background-color: #282c34;
+  border-color: black;
+}
+.Exhibition_entry:hover .Exhib_hover {
+  display: flex;
+}
+.Exhibition_entry:hover .Exhibition_entry_hero_img {
+  opacity: 25%;
+}
+.Exhibition_entry_hero_img {
+  width: 20vw;
+  height: 25vh;
+}
+.Exhib_hover {
+  display: none;
+  width: 22vw; /*This width and margin are to counter-act the padding applied in Exhibition_entry*/
+  margin-left: -1vw;
+  height: 12.5vh;
+  margin-top: -12.5vh;
+  z-index: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: grey;
+  border-radius: 0 0 50px 50px;
+}
+.Exhib_see_more {
+  display: flex;
+  flex-direction: row;
+}
+.Exhib_delete {
+  display: block;
+  width: 5vh;
+  height: 5vh;
+}
+.Exhib_delete button {
+  border-radius: 25%;
+}
+.Exhib_delete button:hover {
+  background-color: #61dafb;
+}
