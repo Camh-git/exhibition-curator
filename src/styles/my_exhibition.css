@@ -4,3 +4,8 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+@media screen and (max-width: 600px) {
+  .Exhibition_obj_container {
+    padding: 10vw;
+  }
+}

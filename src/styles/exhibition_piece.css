@@ -45,6 +45,28 @@
 .Exhib_delete button {
   border-radius: 25%;
 }
-.Exhib_delete button:hover {
+.Exhib_delete button:hover,
+.Exhib_delete image:hover {
   background-color: #61dafb;
+}
+
+@media screen and (max-width: 600px) {
+  .Exhibition_entry {
+    width: 30vw;
+    border-radius: 25px;
+  }
+  .Exhib_hover {
+    height: 30vh;
+    width: 30vw;
+    border-radius: 25px;
+    padding-left: 2.5vw;
+    margin-top: -34vh;
+  }
+}
+@media screen and (min-width: 601px) {
+  .App-header a img {
+    margin-left: 1vw;
+    margin-bottom: -1.5vh;
+    height: 5vh;
+  }
 }

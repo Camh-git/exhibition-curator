@@ -26,11 +26,7 @@
   color: #61dafb;
   text-decoration: none;
 }
-.App-header a img {
-  margin-left: 1vw;
-  margin-bottom: -1.5vh;
-  height: 5vh;
-}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -42,5 +38,25 @@
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .App-header {
+    height: 7.5vh;
+    padding: 1vw;
+  }
+  .App-header a img {
+    display: none;
+  }
+  .App-header nav {
+    padding-top: 2vh;
+  }
+}
+@media screen and (min-width: 601px) {
+  .App-header a img {
+    margin-left: 1vw;
+    margin-bottom: -1.5vh;
+    height: 5vh;
   }
 }

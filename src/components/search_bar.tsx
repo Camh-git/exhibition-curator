@@ -29,6 +29,7 @@ const SearchBar: React.FC = () => {
         id="search_text"
         placeholder="Find a masterpiece..."
       ></input>
+      <br />
       <button onClick={StartSearch}>Add tags</button>
       <button>
         <img src={search_icon} alt="Start search" onClick={StartSearch} />

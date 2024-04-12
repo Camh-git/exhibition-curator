@@ -32,3 +32,19 @@
 .Searchbar_body img {
   height: 5vh;
 }
+@media screen and (max-width: 600px) {
+  .Searchbar_body {
+    width: 80vw;
+    margin-left: 10vw;
+    min-height: 25vh;
+    flex-direction: column;
+  }
+  .Searchbar_body input {
+    font-size: 1rem;
+    width: 60vw;
+    margin-left: 20vw;
+  }
+}
+
+@media screen and (min-width: 601px) {
+}

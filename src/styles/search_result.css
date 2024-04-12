@@ -29,3 +29,12 @@
   height: 10vh;
   padding: 2.5vh;
 }
+
+.added {
+  background-color: green;
+  transition: 2s;
+}
+.removed {
+  background-color: red;
+  transition: 2s;
+}
