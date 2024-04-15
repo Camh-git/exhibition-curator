@@ -8,6 +8,11 @@ import { isNotBlank } from "../Functions/IsNotBlank";
 const SearchBar: React.FC = () => {
   const { updateContext } = useContext(curatorContext);
   const navigate = useNavigate();
+  const CheckEnter = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      StartSearch();
+    }
+  };
   const StartSearch = () => {
     //Get the input values
     const search_query = document.getElementById(
@@ -28,6 +33,7 @@ const SearchBar: React.FC = () => {
         type="text"
         id="search_text"
         placeholder="Find a masterpiece..."
+        onKeyDown={CheckEnter}
       ></input>
       <br />
       <button onClick={StartSearch}>Filters</button>

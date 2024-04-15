@@ -62,8 +62,8 @@ const Home: React.FC = () => {
               want and entering the artist or location into the text box.
             </p>
             <p>
-              Once you are ready just press the search button and you will be
-              taken to the search results page.
+              Once you are ready just press the search button or hit enter and
+              you will be taken to the search results page.
             </p>
             <h4>Curating an exhibtion</h4>
             <p>
