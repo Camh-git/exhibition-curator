@@ -4,6 +4,9 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+.Search_bar_header {
+  margin-top: 10vh;
+}
 @media screen and (max-width: 600px) {
   .Exhibition_obj_container {
     padding: 10vw;

@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { curatorContext } from "../Interfaces/AppContext";
 import { ExhibitionPiece } from "./exhibition_piece";
+import SearchBar from "./search_bar";
 import "../styles/my_exhibition.css";
 import { ArtObject } from "../Interfaces/ArtObject";
 import test_thumb from "../assets/images/Monitor-404.svg";
@@ -36,6 +37,10 @@ const Exhibition: React.FC = () => {
           />
         ))}
       </ul>
+      <h3 className="Search_bar_header">
+        Want some more exhibits? search for some here:
+      </h3>
+      <SearchBar />
     </div>
   );
 };

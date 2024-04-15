@@ -1,4 +1,4 @@
-import logo from "../logo.svg";
+import logo from "../assets/images/Exhibition-curator-logo.svg";
 import home_icon from "../assets/images/icons/home_white_24dp.svg";
 import list_icon from "../assets/images/icons/list_white_24dp.svg";
 import { NavLink } from "react-router-dom";

@@ -30,7 +30,7 @@ const SearchBar: React.FC = () => {
         placeholder="Find a masterpiece..."
       ></input>
       <br />
-      <button onClick={StartSearch}>Add tags</button>
+      <button onClick={StartSearch}>Filters</button>
       <button>
         <img src={search_icon} alt="Start search" onClick={StartSearch} />
       </button>
