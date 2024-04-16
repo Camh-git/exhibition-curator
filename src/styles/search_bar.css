@@ -32,19 +32,45 @@
 .Searchbar_body img {
   height: 5vh;
 }
+.Search_filters {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.Search_filters input {
+  width: 2.5vw;
+  display: inline-block;
+}
+.Search_filters label {
+  text-align: left;
+  color: #61dafb;
+  display: inline-block;
+}
 @media screen and (max-width: 600px) {
   .Searchbar_body {
     width: 80vw;
     margin-left: 10vw;
     min-height: 25vh;
+    height: auto;
     flex-direction: column;
   }
   .Searchbar_body input {
     font-size: 1rem;
     width: 60vw;
-    margin-left: 20vw;
+    align-items: center;
+    margin-top: 5vh;
+    border: 1px solid white;
+    border-radius: 5px;
   }
-}
-
-@media screen and (min-width: 601px) {
+  .Search_filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60vw;
+  }
+  .Search_filters input {
+    float: left;
+    margin: 0;
+    padding: 0;
+  }
 }

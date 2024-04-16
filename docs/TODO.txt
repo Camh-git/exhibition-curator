@@ -1,8 +1,7 @@
 Major:
     Integrate any more APIS
-    Add search param selection to search bar
     Finish more info popup (last major point remaining)
-    Add better handling for no results in the API fetches, investigate the new issue with V&A images 
+    investigate the new issue with V&A images 
 
 Minor:
     replace the "as any" in Convert_to_ArtObject.tsx with dedicated interfaces for each type of API object
