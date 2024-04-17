@@ -8,4 +8,5 @@ export interface ArtObject {
   collection: string; //The source API
   images: string[];
   onDisplay: boolean;
+  description: string;
 }

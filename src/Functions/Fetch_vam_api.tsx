@@ -1,3 +1,4 @@
+import { forEachChild } from "typescript";
 import { ArtObject } from "../Interfaces/ArtObject";
 import { Convert_to_ArtObject } from "./Convert_to_ArtObject";
 
@@ -22,10 +23,25 @@ export function fetch_VAM_API(
         throw new Error("API call response error");
       }
       const data: any = await response.json();
-      resolve(Convert_to_ArtObject(data.records, "VAM"));
+
+      //Get info on each of the found objects
+      let art_info: any = [];
+      for (const record of data.records) {
+        const searchString = `https://api.vam.ac.uk/v2/museumobject/${record.systemNumber}`;
+        const response = await fetch(searchString);
+        if (!response.ok) {
+          throw new Error("API call response error");
+        }
+        const artData: any = await response.json();
+        art_info.push(artData);
+      }
+
+      resolve(Convert_to_ArtObject(art_info, "VAM"));
     } catch (error) {
       console.error("Error fetching data:", error);
       resolve([]);
     }
   });
 }
+
+//Object specific info: https://api.vam.ac.uk/v2/museumobject/O1137015  , id = systemNumber
