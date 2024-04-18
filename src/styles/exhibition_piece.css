@@ -5,6 +5,7 @@
   padding: 1vw;
   height: 30vh;
   margin-top: 5vh;
+  z-index: 1;
 }
 .Exhibition_entry:hover {
   background-color: #282c34;
@@ -36,14 +37,13 @@
 .Exhib_see_more {
   display: flex;
   flex-direction: row;
-}
-.Exhib_delete {
-  display: block;
-  width: 5vh;
-  height: 5vh;
+  justify-content: center;
+  align-items: center;
 }
 .Exhib_delete button {
   border-radius: 25%;
+  width: 5vh;
+  height: 5vh;
 }
 .Exhib_delete button:hover,
 .Exhib_delete image:hover {

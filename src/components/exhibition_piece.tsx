@@ -4,20 +4,32 @@ import Exapand_icon from "../assets/images/icons/expand_black_24dp.svg";
 import Delete_icon from "../assets/images/icons/delete_black_24dp.svg";
 import { useContext } from "react";
 import curatorContext from "../Interfaces/AppContext";
-import { ExhibitInfo } from "./Exhibit_info";
 
 interface ExhibtionPieceProp {
   ArtWork: ArtObject;
+  ShowInfo: (title: string) => void;
 }
 
-export const ExhibitionPiece: React.FC<ExhibtionPieceProp> = ({ ArtWork }) => {
-  const { updateExhibition } = useContext(curatorContext);
-  const Delete_entry = () => {
+export const ExhibitionPiece: React.FC<ExhibtionPieceProp> = ({
+  ArtWork,
+  ShowInfo: toggleInfo,
+}) => {
+  const { updateExhibition, updateFocusedPiece } = useContext(curatorContext);
+
+  const Delete_entry = (
+    event: React.MouseEvent<HTMLButtonElement | HTMLImageElement, MouseEvent>
+  ) => {
+    event.stopPropagation();
     updateExhibition(ArtWork, true);
   };
-  const Show_more = () => {};
+
+  const Show_more = () => {
+    //Set the focused art piece to this one, display the "more info" screen.
+    updateFocusedPiece(ArtWork);
+    toggleInfo(ArtWork.title);
+  };
   return (
-    <div className="Exhibition_entry">
+    <div className="Exhibition_entry" onClick={Show_more}>
       <img
         src={ArtWork.images[0]}
         alt=""
@@ -26,9 +38,9 @@ export const ExhibitionPiece: React.FC<ExhibtionPieceProp> = ({ ArtWork }) => {
 
       <h4>{ArtWork.title}</h4>
       <section className="Exhib_hover">
-        <div className="Exhib_see_more" onClick={Show_more}>
+        <div className="Exhib_see_more">
           <img src={Exapand_icon} alt="Show more arrow" />
-          <p>Show more</p>
+          <p>Click to see more</p>
         </div>
         <div className="Exhib_delete">
           <button onClick={Delete_entry}>

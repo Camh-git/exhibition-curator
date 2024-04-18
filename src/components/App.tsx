@@ -10,7 +10,6 @@ import {
 function App() {
   document.title = "Exhibition curator";
   const [appContext, setAppContext] = useState(curatorContext);
-  const [loading, setLoading] = useState(true);
 
   return (
     <div className="App">

@@ -1,25 +1,35 @@
-import React, {
-  createContext,
-  useContext,
-  useState,
-  PropsWithChildren,
-} from "react";
+import React, { createContext, useState, PropsWithChildren } from "react";
+import placeholder_thumb from "../assets/images/Monitor-404.svg";
 import { ArtObject } from "./ArtObject";
 
 export interface AppContextType {
   lastSearchString: string;
   lastSearchParam: string;
   exhibtionContent: ArtObject[];
+  focusedPiece: ArtObject;
   updateContext: (newSearchTerm: string, newSearchParam: string) => void;
   updateExhibition: (newObject: ArtObject, remove: boolean) => void;
+  updateFocusedPiece: (newPiece: ArtObject) => void;
 }
 
 export const curatorContext = createContext<AppContextType>({
   lastSearchString: "England",
   lastSearchParam: "None",
   exhibtionContent: [],
+  focusedPiece: {
+    id: "99999",
+    title: "This is a placeholder",
+    artist: "placeholder author",
+    date: "1970",
+    location: "This PC",
+    collection: "Default",
+    images: [placeholder_thumb],
+    onDisplay: false,
+    description: "This is a placeholder description",
+  },
   updateContext: (newSearchTerm: string, newSearchParam: string) => {},
   updateExhibition: (newObject: ArtObject, remove: boolean) => {},
+  updateFocusedPiece: (newPiece: ArtObject) => {},
 });
 
 export const CuratorContextProvider: React.FC<PropsWithChildren> = ({
@@ -28,6 +38,17 @@ export const CuratorContextProvider: React.FC<PropsWithChildren> = ({
   const [lastSearchString, setLastSearchString] = useState("England");
   const [lastSearchParam, setLastSearchParam] = useState("None");
   const [exhibtionContent, setExhibitionContent] = useState<ArtObject[]>([]);
+  const [focusedPiece, setFocusedPiece] = useState<ArtObject>({
+    id: "99999",
+    title: "This is a placeholder",
+    artist: "placeholder author",
+    date: "1970",
+    location: "This PC",
+    collection: "Default",
+    images: [placeholder_thumb],
+    onDisplay: false,
+    description: "This is a placeholder description",
+  });
 
   const updateContext = (newSearchString: string, newSearchParam: string) => {
     setLastSearchString(newSearchString);
@@ -49,12 +70,17 @@ export const CuratorContextProvider: React.FC<PropsWithChildren> = ({
 
     setExhibitionContent(newExhibition);
   };
+  const updateFocusedPiece = (newPiece: ArtObject) => {
+    setFocusedPiece(newPiece);
+  };
 
   const contextValue = React.useMemo(
     () => ({
       lastSearchString,
       lastSearchParam,
       exhibtionContent,
+      focusedPiece,
+      updateFocusedPiece,
       updateContext,
       updateExhibition,
     }),
@@ -62,6 +88,8 @@ export const CuratorContextProvider: React.FC<PropsWithChildren> = ({
       lastSearchString,
       lastSearchParam,
       exhibtionContent,
+      focusedPiece,
+      updateFocusedPiece,
       updateContext,
       updateExhibition,
     ]

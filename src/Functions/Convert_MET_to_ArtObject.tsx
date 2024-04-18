@@ -4,7 +4,6 @@ import { isNotBlank } from "./IsNotBlank";
 
 export function Convert_MET_to_ArtObject(record: any): ArtObject {
   //Get the piece's image URLs
-  console.log(record);
   let image_urls: string[] = [];
   if (isNotBlank(record.primaryImage)) {
     image_urls.push(record.primaryImage);

@@ -1,0 +1,29 @@
+.Exhibit_info_container {
+  width: 60vw;
+  margin-left: 20vw;
+  border: 5px solid #282c34;
+  border-radius: 50px;
+  min-height: 25vh;
+  z-index: 0;
+  padding: 2.5vh;
+}
+.Exhibit_info_container img {
+  max-width: 100%;
+  max-height: 30vh;
+}
+.Exhibit_info_data,
+.Exhibit_info_source {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+@media screen and (max-width: 600px) {
+  .Exhibit_info_container {
+    width: 80vw;
+    margin-left: 10vw;
+  }
+  .Exhibit_info_data,
+  .Exhibit_info_source {
+    flex-direction: column;
+  }
+}
