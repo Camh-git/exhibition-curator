@@ -10,8 +10,7 @@ const SearchResultsPage: React.FC = () => {
   const [Searching, setSearching] = useState(true);
 
   //Get the search parameters
-  const { lastSearchString, lastSearchParam, updateContext } =
-    useContext(curatorContext);
+  const { lastSearchString, lastSearchParam } = useContext(curatorContext);
   console.log(
     `Searching for: ${lastSearchString}, paramaters: ${lastSearchParam}`
   );

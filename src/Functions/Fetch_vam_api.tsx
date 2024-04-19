@@ -1,4 +1,3 @@
-import { forEachChild } from "typescript";
 import { ArtObject } from "../Interfaces/ArtObject";
 import { Convert_to_ArtObject } from "./Convert_to_ArtObject";
 

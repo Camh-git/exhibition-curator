@@ -16,6 +16,9 @@
   border-radius: 25px 0 0 25px;
   width: 10vw;
 }
+.Search_object_body button img {
+  max-width: 10vw;
+}
 .Search_obj_info {
   border: 3px solid grey;
   width: 40vw;
@@ -30,11 +33,41 @@
   padding: 2.5vh;
 }
 
-.added {
-  background-color: green;
-  transition: 2s;
-}
-.removed {
-  background-color: red;
-  transition: 2s;
+@media screen and (max-width: 600px) {
+  .Search_obj_container {
+    width: 100vw;
+    margin-left: 0;
+    padding: 0;
+    align-items: center;
+  }
+  .Search_object_body,
+  .Search_obj_info,
+  .Search_obj_img {
+    width: 80vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+
+  .Search_object_body {
+    flex-direction: column;
+    margin-left: 2.5vw;
+    margin-bottom: 25vh;
+  }
+
+  .Search_object_body button {
+    float: left;
+    height: 10vh;
+    border-radius: 25px 25px 0 0;
+    width: 84vw;
+  }
+  .Search_object_body button img {
+    height: 10vw;
+  }
+  .Search_obj_info {
+    max-height: 25vh;
+  }
+  .Search_obj_img {
+    max-height: 20vh;
+    border-radius: 0 0 25px 25px;
+  }
 }

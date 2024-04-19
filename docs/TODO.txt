@@ -1,17 +1,16 @@
 Major:
-    Integrate any more APIS
-    investigate the new issue with V&A images 
+    investigate the new issue with V&A images - seems to be fixed, some searches just dont have many images
 
 Minor:
     replace the "as any" in Convert_to_ArtObject.tsx with dedicated interfaces for each type of API object
-    Investigate more options for ArtObject data, find a way to integrate them neatly into the UI
-    add checks to stop duplicates caused by reacts double running
     consider re-ordering search results to put results with unknown values lower down 
-    Add mechanism to search results to check if each item is already in the exhibition and set it's Added state to true if so
     Animated item added/removed pop up
-    make the search result objects responsive 
     change "updateContext" and its calls to "updateSearch" since its more descriptive
+
      
+Expansion:
+    Integrate any more APIS 
+    Investigate more options for ArtObject data, find a way to integrate them neatly into the UI
 
 Notes:
     the number of results returned from the met museum is intentionally restricted to 10 to avoid getting rate limited (it can return thousands of results otherwise)

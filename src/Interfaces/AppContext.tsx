@@ -1,5 +1,6 @@
 import React, { createContext, useState, PropsWithChildren } from "react";
 import placeholder_thumb from "../assets/images/Monitor-404.svg";
+import { PlaceHolderArt } from "./PlaceHolderArtOBJ";
 import { ArtObject } from "./ArtObject";
 
 export interface AppContextType {
@@ -16,17 +17,7 @@ export const curatorContext = createContext<AppContextType>({
   lastSearchString: "England",
   lastSearchParam: "None",
   exhibtionContent: [],
-  focusedPiece: {
-    id: "99999",
-    title: "This is a placeholder",
-    artist: "placeholder author",
-    date: "1970",
-    location: "This PC",
-    collection: "Default",
-    images: [placeholder_thumb],
-    onDisplay: false,
-    description: "This is a placeholder description",
-  },
+  focusedPiece: PlaceHolderArt(),
   updateContext: (newSearchTerm: string, newSearchParam: string) => {},
   updateExhibition: (newObject: ArtObject, remove: boolean) => {},
   updateFocusedPiece: (newPiece: ArtObject) => {},
@@ -38,17 +29,7 @@ export const CuratorContextProvider: React.FC<PropsWithChildren> = ({
   const [lastSearchString, setLastSearchString] = useState("England");
   const [lastSearchParam, setLastSearchParam] = useState("None");
   const [exhibtionContent, setExhibitionContent] = useState<ArtObject[]>([]);
-  const [focusedPiece, setFocusedPiece] = useState<ArtObject>({
-    id: "99999",
-    title: "This is a placeholder",
-    artist: "placeholder author",
-    date: "1970",
-    location: "This PC",
-    collection: "Default",
-    images: [placeholder_thumb],
-    onDisplay: false,
-    description: "This is a placeholder description",
-  });
+  const [focusedPiece, setFocusedPiece] = useState<ArtObject>(PlaceHolderArt());
 
   const updateContext = (newSearchString: string, newSearchParam: string) => {
     setLastSearchString(newSearchString);

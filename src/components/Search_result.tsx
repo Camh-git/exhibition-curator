@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { ArtObject } from "../Interfaces/ArtObject";
 import { curatorContext } from "../Interfaces/AppContext";
 import Add_icon from "../assets/images/icons/add_black_24dp.svg";
@@ -11,8 +11,20 @@ interface ArtObjectProp {
 
 const SearchResult: React.FC<ArtObjectProp> = ({ ArtObject }) => {
   const [Added, setAdded] = useState(false);
-  const { updateExhibition } = useContext(curatorContext);
+  const { updateExhibition, exhibtionContent } = useContext(curatorContext);
   const addBtnAlt = `Add ${ArtObject.title} to exhibition`;
+
+  useEffect(() => {
+    //Check if this result is already in the exhibtion, set it as added if so
+    exhibtionContent.forEach((entry) => {
+      if (
+        entry.title === ArtObject.title &&
+        entry.artist === ArtObject.artist
+      ) {
+        setAdded(true);
+      }
+    }, []);
+  });
 
   const toggleAdded = () => {
     if (Added) {
