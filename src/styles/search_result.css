@@ -34,6 +34,34 @@
   max-width: 10vw;
 }
 
+/*Added/removed animation*/
+@keyframes changeButtonColor {
+  0% {
+    background-color: white;
+  }
+  25% {
+    background-color: var(--artwork-to-exhib-btn-color);
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+.Search_obj_add_btn button {
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+}
+
+.add_animation button {
+  animation-name: changeButtonColor;
+  --artwork-to-exhib-btn-color: green;
+}
+
+.remove_animation button {
+  animation-name: changeButtonColor;
+  --artwork-to-exhib-btn-color: red;
+}
+
 @media screen and (max-width: 600px) {
   .Search_obj_container {
     width: 100vw;

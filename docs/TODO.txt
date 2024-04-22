@@ -3,7 +3,6 @@ Major:
 
 Minor:
     replace the "as any" in Convert_to_ArtObject.tsx with dedicated interfaces for each type of API object
-    Animated item added/removed pop up
     change "updateContext" and its calls to "updateSearch" since its more descriptive
 
      

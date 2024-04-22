@@ -13,6 +13,7 @@ const SearchResult: React.FC<ArtObjectProp> = ({ ArtObject }) => {
   const [Added, setAdded] = useState(false);
   const { updateExhibition, exhibtionContent } = useContext(curatorContext);
   const addBtnAlt = `Add ${ArtObject.title} to exhibition`;
+  const addBtn = React.createRef<HTMLDivElement>();
 
   useEffect(() => {
     //Check if this result is already in the exhibtion, set it as added if so
@@ -31,16 +32,32 @@ const SearchResult: React.FC<ArtObjectProp> = ({ ArtObject }) => {
       setAdded(false);
       console.log("Removing: " + ArtObject.title);
       updateExhibition(ArtObject, true);
+      triggerAnimation("remove_animation");
     } else {
       setAdded(true);
       console.log("Adding: " + ArtObject.title);
       updateExhibition(ArtObject, false);
+      triggerAnimation("add_animation");
+    }
+  };
+
+  const triggerAnimation = (className: string) => {
+    const btn = addBtn.current;
+    if (btn) {
+      btn.classList.add(className);
+      setTimeout(() => {
+        btn.classList.remove(className);
+      }, 2000);
     }
   };
 
   return (
     <div className="Search_object_body">
-      <section className="Search_obj_add_btn" onClick={toggleAdded}>
+      <section
+        className="Search_obj_add_btn"
+        onClick={toggleAdded}
+        ref={addBtn}
+      >
         <button>
           <img
             src={Added ? Remove_icon : Add_icon}
