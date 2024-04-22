@@ -30,7 +30,8 @@
 }
 .Search_object_body img {
   height: 10vh;
-  padding: 2.5vh;
+  padding-top: 2.5vh;
+  max-width: 10vw;
 }
 
 @media screen and (max-width: 600px) {

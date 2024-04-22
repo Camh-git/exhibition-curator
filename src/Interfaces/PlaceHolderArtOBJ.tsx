@@ -3,10 +3,10 @@ import placeholder_thumb from "../assets/images/Monitor-404.svg";
 export function PlaceHolderArt(): ArtObject {
   return {
     id: "99999",
-    title: "Not found",
-    artist: "Not found",
+    title: "Unknown title",
+    artist: "Unknown artist",
     date: "1970",
-    location: "None",
+    location: "Not found",
     collection: "InvalidObject",
     images: [placeholder_thumb],
     onDisplay: false,
