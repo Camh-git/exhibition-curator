@@ -7,7 +7,7 @@ import { isNotBlank } from "../Functions/IsNotBlank";
 
 const SearchBar: React.FC = () => {
   //Get the context and setup state
-  const { updateContext } = useContext(curatorContext);
+  const { updateSearch } = useContext(curatorContext);
   const [ShowFilters, setShowFilters] = useState(false);
   const [SearchParameter, setSearchParameter] = useState("None");
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ const SearchBar: React.FC = () => {
     ) as HTMLInputElement;
     if (isNotBlank(search_query.value)) {
       //Update the context and go to the results page
-      updateContext(search_query.value, SearchParameter);
+      updateSearch(search_query.value, SearchParameter);
       navigate("/search-results");
     } else {
       alert("Please enter a search term before searching");

@@ -1,0 +1,52 @@
+The way a search opperates is as follows:
+1. The user enters a search term (and optionaly a filter type) into a search 
+    bar and presses go.
+2. The search bar updates the "lastSearchString" and "lastSearchParam" context 
+    variables and naviagates to the search results page
+    
+    (Note: the search results are stored in context so that the user can go back
+     in their history and run the same search, this is also why the search page 
+     itself runs the search)
+
+3. The search_results_page component renders, fetches the search parameters from
+     the context and calls the search_APIs function with those parameters, 
+     storing the result in a variable.
+
+4. The search_APIs function will async run each of the API specific searches in turn
+    the combine the returned data and re-organise it so that entries with unknown
+    artists or titles are put at the end of the list.
+    It will then return the finished array to the search_results_page for display
+
+5. Each API function will run (named Fetch_VAM_API, Fetch_MET_API ect.), these
+    will each follow the same steps:
+        A. Setup the search string with the selected filter and search term
+        B. Run a search using the term and store the results
+        C. If the API returns a list of exhibit IDs (eg. the MET API) it will
+            then run an aditional search on each ID to get the required info.
+        D. The function will call Convert_to_ArtObject with it's data and 
+            return it to search_APIs for combination and sorting (or an
+            empty array if there is an error)
+
+6. The collected data is sent to Convert_to_ArtObject so that the data can
+    be converted into a single standardised ArtObject JS object for use 
+    in the rest of the application.
+    Convert_to_ArtObject determins the API source and loops through the
+    results, sending each to the appropriate API's converter (they obviously
+    each need a different one due to the different data fields they return).
+
+ 7. Each of the converters tries to extract as close a match to the desired
+    format of an ArtObject as possible from each response, including error
+    handling for invalid/missing data.
+    It will either create and return a new ArtObject using the data, or a 
+    placeholder, which will be discarded by Convert_to_ArtObject.
+
+
+8. The data then heads back up the stack, getting validity checked by
+    Convert_to_ArtObject, then to it's Fetch_X_API function, which will
+    hand it to the search_APIs function for combination and sorting,
+    where it is finally handed back to the search_results_page.
+    
+9. The search_results_page recieves the ArtObject array, hides it's "searching..."
+    message and sets the array as state then maps it onto a collection of
+    Search_result components for display (or displays "No results found")
+    from here the user can browse and add items to their exhibtion.

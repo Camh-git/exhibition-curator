@@ -1,5 +1,4 @@
 import React, { createContext, useState, PropsWithChildren } from "react";
-import placeholder_thumb from "../assets/images/Monitor-404.svg";
 import { PlaceHolderArt } from "./PlaceHolderArtOBJ";
 import { ArtObject } from "./ArtObject";
 
@@ -8,7 +7,7 @@ export interface AppContextType {
   lastSearchParam: string;
   exhibtionContent: ArtObject[];
   focusedPiece: ArtObject;
-  updateContext: (newSearchTerm: string, newSearchParam: string) => void;
+  updateSearch: (newSearchTerm: string, newSearchParam: string) => void;
   updateExhibition: (newObject: ArtObject, remove: boolean) => void;
   updateFocusedPiece: (newPiece: ArtObject) => void;
 }
@@ -18,7 +17,7 @@ export const curatorContext = createContext<AppContextType>({
   lastSearchParam: "None",
   exhibtionContent: [],
   focusedPiece: PlaceHolderArt(),
-  updateContext: (newSearchTerm: string, newSearchParam: string) => {},
+  updateSearch: (newSearchTerm: string, newSearchParam: string) => {},
   updateExhibition: (newObject: ArtObject, remove: boolean) => {},
   updateFocusedPiece: (newPiece: ArtObject) => {},
 });
@@ -31,7 +30,7 @@ export const CuratorContextProvider: React.FC<PropsWithChildren> = ({
   const [exhibtionContent, setExhibitionContent] = useState<ArtObject[]>([]);
   const [focusedPiece, setFocusedPiece] = useState<ArtObject>(PlaceHolderArt());
 
-  const updateContext = (newSearchString: string, newSearchParam: string) => {
+  const updateSearch = (newSearchString: string, newSearchParam: string) => {
     setLastSearchString(newSearchString);
     setLastSearchParam(newSearchParam);
   };
@@ -62,7 +61,7 @@ export const CuratorContextProvider: React.FC<PropsWithChildren> = ({
       exhibtionContent,
       focusedPiece,
       updateFocusedPiece,
-      updateContext,
+      updateSearch,
       updateExhibition,
     }),
     [
@@ -71,7 +70,7 @@ export const CuratorContextProvider: React.FC<PropsWithChildren> = ({
       exhibtionContent,
       focusedPiece,
       updateFocusedPiece,
-      updateContext,
+      updateSearch,
       updateExhibition,
     ]
   );

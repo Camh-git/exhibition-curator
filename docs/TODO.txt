@@ -3,8 +3,6 @@ Major:
 
 Minor:
     replace the "as any" in Convert_to_ArtObject.tsx with dedicated interfaces for each type of API object
-    change "updateContext" and its calls to "updateSearch" since its more descriptive
-
      
 Expansion:
     Integrate any more APIS 

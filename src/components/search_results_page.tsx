@@ -2,7 +2,7 @@ import { ArtObject } from "../Interfaces/ArtObject";
 import React, { useState, useContext, useEffect } from "react";
 import SearchResult from "./Search_result";
 import { curatorContext } from "../Interfaces/AppContext";
-import { search_APIs } from "../Functions/Run_search";
+import { search_APIs } from "../Functions/Search_APIs";
 import "../styles/search_result.css";
 
 const SearchResultsPage: React.FC = () => {

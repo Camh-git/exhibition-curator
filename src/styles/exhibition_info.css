@@ -6,11 +6,13 @@
   border: 5px solid #282c34;
   border-radius: 50px;
   min-height: 25vh;
-  z-index: 0;
   padding: 2.5vh;
 }
 .Exhibit_info_container img {
-  max-width: 100%;
+  width: auto;
+  height: auto;
+  max-width: 80%;
+  margin-left: 10%;
   max-height: 30vh;
 }
 .Exhibit_info_data,
