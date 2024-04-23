@@ -9,10 +9,9 @@
   padding: 2.5vh;
 }
 .Exhibit_info_container img {
-  width: auto;
-  height: auto;
-  max-width: 80%;
-  margin-left: 10%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   max-height: 30vh;
 }
 .Exhibit_info_data,

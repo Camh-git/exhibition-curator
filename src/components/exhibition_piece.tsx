@@ -1,6 +1,6 @@
 import { ArtObject } from "../Interfaces/ArtObject";
 import "../styles/exhibition_piece.css";
-import Exapand_icon from "../assets/images/icons/expand_black_24dp.svg";
+import Exapand_icon from "../assets/images/icons/expand_white_24dp.svg";
 import Delete_icon from "../assets/images/icons/delete_black_24dp.svg";
 import { useContext } from "react";
 import curatorContext from "../Interfaces/AppContext";
