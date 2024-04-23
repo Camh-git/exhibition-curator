@@ -1,5 +1,5 @@
 Major:
-    investigate the new issue with V&A images - seems to be fixed, some searches just dont have many images
+    Install issue - appears to be react hooks test not working with react 18 due to some ongoing integration
 
 Minor:
     replace the "as any" in Convert_to_ArtObject.tsx with dedicated interfaces for each type of API object
@@ -9,10 +9,6 @@ Expansion:
     Investigate more options for ArtObject data, find a way to integrate them neatly into the UI
 
 Notes:
-    the number of results returned from the met museum is intentionally restricted to 10 to avoid getting rate limited (it can return thousands of results otherwise)
-
-
-
-REMINDERS:
-    USE context to store search results, the user can then simply be sent to the search results page and it can map the context
-        ^ probably use context to ensure the exhibition's contents are consistent throught the session
+    The number of results returned from the met museum is intentionally restricted to 10 to avoid getting rate limited (it can return thousands of results otherwise).
+    Context is used to store the search parameters so that the user can run the search again by just going back
+    Context is used to store the exhibition context to ensure consistency
